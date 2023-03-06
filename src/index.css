@@ -1,0 +1,30 @@
+
+.weather-card{
+  display: flex;
+  background: linear-gradient(#e5f2ff 0%, #d5f3ff 97.4%);
+  border-radius:23px 23px 23px 23px;
+  offset: 0px, 4.85px, rgba(0, 0, 0, 0.25);
+  box-shadow: 10px 4px 4.85px 0px rgba(0, 0, 0, 0.25);
+  width: 400px;
+  height: 280px;
+  padding: 1rem;
+  justify-content: space-between;
+  clip-path: polygon(0 0, 0 200%, 500% 125%);
+  position: relative;
+}
+
+.info-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0.6rem;
+
+  padding: 1rem;
+}
+
+.info-card-dos{
+  position: absolute;
+  left: 300px;
+  bottom: 25px;
+}
