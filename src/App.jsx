@@ -32,7 +32,7 @@ function App() {
   }
 
   const onSubmit = (value) => {
-    
+
     axios
       .get(`${API_endpoint}q=${value}&appid=${API_key}&lang=es&units=metric`)
       .then((res) => setResponseData(res.data))

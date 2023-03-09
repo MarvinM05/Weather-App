@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 const Form = ({ submitSearch }) => {
   const [city, setCity] = useState("");
+  const ref = useRef(null)
 
-  const onSubmit = (e) => {
+  const onSubmit = (e,) => {
     e.preventDefault();
     if (city === "" || !city) return;
+
     submitSearch(city);
+    handleClick()
+  };
+
+  const handleClick = () => {
+    // 👇️ reset input field's value
+    ref.current.value = "";
   };
 
   return (
@@ -17,6 +25,7 @@ const Form = ({ submitSearch }) => {
             <i className="bx bx-search"></i>
           </span>
           <input
+            ref={ref}
             type="text"
             className="input"
             placeholder="Buscar una ciudad"
