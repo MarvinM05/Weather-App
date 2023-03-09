@@ -21,7 +21,17 @@
 --font-bold: 700;
 --font-regular: 500;
 --font-light: 300;
-
+}
+@media screen and (min-width: 968px) {
+  :root {
+    --App-font: 'Lato',
+      sans-serif;
+    --T1-font-size: 95PX;
+    --T2-font-size: 23px;
+    --T3-font-size: 18px;
+    --T4-font-size: 16px;
+    --T5-font-size: 12px;
+  }
 }
 
 *{
@@ -43,6 +53,22 @@
   padding: 4rem;
   gap: 6.5rem;
   font-family: var(--App-font);
+}
+
+@media screen and (min-width: 390px) {
+  .App {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(#d5f3ff 0%, #51b4e8 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 2.5rem 0 2.5rem 0;
+    gap: 5rem;
+    font-family: var(--App-font);
+  }
 }
 
 h2{
@@ -88,3 +114,13 @@ button{
   height: 140px;
 }
 
+@media screen and (min-width: 968px) {
+  .icon-weather {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    z-index: 1;
+    width: 160px;
+    height: 160px;
+  }
+}
