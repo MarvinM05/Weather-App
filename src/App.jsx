@@ -2,50 +2,51 @@ import axios from 'axios';
 import { useState, useEffect } from 'react'
 import './App.css'
 import WeatherCard from './components/WeatherCard';
+import Form from './components/Form';
 
 const API_endpoint = `https://api.openweathermap.org/data/2.5/weather?`;
 
 const API_key = `7b293b5b3c8defc39fbc08725a59605f`;
 
+
 function App() {
 
-  const [city, setCity] = useState('')
-  const [latitud, setLatitud] = useState('')
-  const [longitud, setLongitud] = useState('')
   const [responseData, setResponseData] = useState({})
+  const [changeTemp, setChangeTemp] = useState(false);
 
-  const searchCity = (e) => {
-    setCity(e.target.value)
-    console.log(e.target.value);
-  }
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
-      setLatitud(position.coords.latitude);
-      setLongitud(position.coords.longitude);
+      let finalAPIEndPoint = `${API_endpoint}lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_key}&lang=es&units=metric`;
 
-    });
 
-    let finalAPIEndPoint = `${API_endpoint}lat=${latitud}&lon=${longitud}&appid=${API_key}&units=metric`;
-
-    axios.get(finalAPIEndPoint).then((res) => {
-      setResponseData(res.data);
-      console.log(res.data);
+      getData(finalAPIEndPoint)
     });
   }, []);
 
+  const getData = (url) => {
+    axios.get(url).then((res) => {
+      setResponseData(res.data);
+      console.log(res.data);
+    });
+  }
+
+  const onSubmit = (value) => {
+    
+    axios
+      .get(`${API_endpoint}q=${value}&appid=${API_key}&lang=es&units=metric`)
+      .then((res) => setResponseData(res.data))
+      .catch((error) => console.log(error));
+    
+  };
 
   return (
     <div className="App">
-      <input
-        type="text"
-        placeholder="Buscar una ciudad"
-        onChange={searchCity}
-      />
-      <WeatherCard
-        data={responseData}      
-      />
-      <button>cambiar a F</button>
+      <Form submitSearch={onSubmit} />
+
+      <WeatherCard data={responseData} action={changeTemp} />
+
+      <button onClick={() => setChangeTemp(!changeTemp)}>Cambiar a ºF</button>
     </div>
   );
 }

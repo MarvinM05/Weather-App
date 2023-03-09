@@ -1,3 +1,29 @@
+
+/*=====VARIABLES CSS======*/
+:root{
+
+/*======COLORS======*/
+--btn-light: #38a0d8;
+--btn-dark: #7d69f1;
+--primary-color: #026eed;
+--secondary-color: #4792e2;
+
+/*=====Font and Typography=========*/
+  --App-font: 'Lato',
+    sans-serif;
+  --T1-font-size: 79PX;
+  --T2-font-size: 19px;
+  --T3-font-size: 15px;
+  --T4-font-size: 14px;
+  --T5-font-size: 10px;
+
+/*=======Font weight========*/
+--font-bold: 700;
+--font-regular: 500;
+--font-light: 300;
+
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -5,16 +31,60 @@
   text-align: center;
 }
 
-
-
 .App{
   width: 100%;
   height: 100vh;
   background: radial-gradient(#d5f3ff 0%, #51b4e8 100%);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   justify-items: center;
   align-items: center;
   padding: 4rem;
+  gap: 6.5rem;
+  font-family: var(--App-font);
 }
+
+h2{
+  font-size: var(--T1-font-size);
+  font-weight: var(--font-light);
+  color: var(--primary-color);
+}
+
+h2, h3, p{
+  color: var(--primary-color);
+}
+
+p{
+  font-size: var(--T4-font-size);
+  font-weight: var(--font-bold);
+  color: var(--secondary-color);
+}
+
+h3 {
+  font-size: var(--T2-font-size);
+  font-weight: var(--font-bold);
+}
+
+button{
+  width: 178px;
+  height: 38px;
+  background: var(--btn-light);
+  border-radius: 10px;
+  border: none;
+  box-shadow: 3px 4px 4.85px 0px rgba(0, 0, 0, 0.25);
+  font-family: inherit;
+  font-size: var(--T3-font-size);
+  font-weight: var(--font-bold);
+  color: rgb(245, 243, 243);
+}
+
+.icon-weather{
+  position: absolute;
+  right: 10px;
+  top: 0;
+  z-index: 1;
+  width: 140px;
+  height: 140px;
+}
+
