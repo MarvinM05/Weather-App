@@ -4,7 +4,7 @@ const Form = ({ submitSearch }) => {
   const [city, setCity] = useState("");
   const ref = useRef(null)
 
-  const onSubmit = (e,) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     if (city === "" || !city) return;
 
