@@ -52,16 +52,22 @@ gap: 1.2rem;
 .loading-cloud{
   width: 70px;
   height: 70px;
-  
 }
+
+.title-loader{
+  color:rgb(247, 244, 244) ;
+}
+
 .loading-icons{
 background: rgb(247, 244, 244);
 width: 355px;
+height: 28px;
 border-radius: 10px;
-height: 20px;
 display: flex;
 justify-content: space-around;
+align-items: center;
 box-shadow: 3px 4px 4.85px 0px rgba(0, 0, 0, 0.25);
+font-size: 20px;
 }
 
 

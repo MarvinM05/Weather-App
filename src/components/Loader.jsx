@@ -4,7 +4,7 @@ const Loader = () => {
       <span>
         <img className="loading-cloud" src={`/iconos/cloud.png`} alt="" />
       </span>
-      <h3>Weather App</h3>
+      <h3 className="title-loader">Weather App</h3>
       <div className="loading-icons">
         <span>
           <i className="bx bx-wind"></i>
