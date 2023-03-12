@@ -142,7 +142,22 @@ button{
   z-index: 1;
   width: 140px;
   height: 140px;
+  /* animation: scale-in-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
 }
+
+/* @keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+} */
 
 @media screen and (min-width: 968px) {
   .icon-weather {
@@ -153,4 +168,27 @@ button{
     width: 160px;
     height: 160px;
   }
+
+  .loading-icons {
+    background: rgb(247, 244, 244);
+    width: 400px;
+    height: 28px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 3px 4px 4.85px 0px rgba(0, 0, 0, 0.25);
+    font-size: 20px;
+  }
+
+  .loading-cloud {
+    width: 90px;
+    height: 90px;
+  }
+
+  .title-loader {
+    color: rgb(247, 244, 244);
+    font-size: var(--T2-font-size);
+  }
+
 }

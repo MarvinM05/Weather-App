@@ -30,16 +30,18 @@ function App() {
   const getData = (url) => {
     axios.get(url).then((res) => {
       setResponseData(res.data);
-      setLoaderS(false)
+      setLoaderS(true)
     });
 
   }
   
   const onSubmit = (value) => {  
     axios
-    .get(`${API_endpoint}q=${value}&appid=${API_key}&lang=es&units=metric`)
-    .then((res) => setResponseData(res.data))
-    .catch((error) => console.log(error));  
+      .get(`${API_endpoint}q=${value}&appid=${API_key}&lang=es&units=metric`)
+      .then((res) => setResponseData(res.data))
+      .catch((error) => console.log(error));  
+    
+    
   };
   
   return (
