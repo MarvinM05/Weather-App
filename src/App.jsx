@@ -30,7 +30,7 @@ function App() {
   const getData = (url) => {
     axios.get(url).then((res) => {
       setResponseData(res.data);
-      setLoaderS(true)
+      setLoaderS(false)
     });
 
   }
