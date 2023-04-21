@@ -29,9 +29,13 @@ function App() {
   
   const getData = (url) => {
     axios.get(url).then((res) => {
-      setResponseData(res.data);
-      setLoaderS(false)
-    });
+      setResponseData(res.data)
+
+      setTimeout(() => {
+        setLoaderS(false)
+      }, 2000)
+      // setLoaderS(false)
+    })
 
   }
   
