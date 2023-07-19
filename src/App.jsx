@@ -47,17 +47,23 @@ function App() {
     
     
   };
+
+   const toggleTemperatureUnit = () => {
+     setC(c === "ºF" ? "ºC" : "ºF");
+     setChangeTemp(!changeTemp);
+   };
   
   return (
     <div className="App">
-
       {loaderS && <Loader />}
-      
+
       <Form submitSearch={onSubmit} />
 
       <WeatherCard data={responseData} action={changeTemp} />
 
-      <button onClick={() => setChangeTemp(!changeTemp)}>Cambiar a ºF</button>
+      <button onClick={toggleTemperatureUnit}>
+        Cambiar a {c === "ºF" ? "ºC" : "ºF"}
+      </button>
     </div>
   );
 }
